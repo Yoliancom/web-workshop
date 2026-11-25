@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>清音古筝社 - 招新启事</title>
+    <style>
+        /* CSS 变量：统一管理高级感配色 */
+        :root {
+            --primary-color: #2c3e35; /* 黛绿/墨绿 */
+            --accent-color: #c9a068; /* 琥珀金 */
+            --bg-color: #f7f5f0; /* 宣纸白 */
+            --text-color: #333333;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Songti SC', 'SimSun', 'Microsoft YaHei', sans-serif; /* 标题优先宋体，正文雅黑 */
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            scroll-behavior: smooth; 
+        }
+
+        /* 顶部导航栏 - 毛玻璃效果 */
+        .header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(44, 62, 53, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* 音乐按钮美化 */
+        .music-btn {
+            background-color: transparent;
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 20px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .music-btn:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            box-shadow: 0 0 10px rgba(201, 160, 104, 0.5);
+        }
+
+        /* 导航链接 */
+        .nav-links a {
+            color: #f0f0f0;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 15px;
+            position: relative;
+            transition: color 0.3s;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background-color: var(--accent-color);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        .nav-links a:hover { color: var(--accent-color); }
+        .nav-links a:hover::after { width: 100%; }
+
+        /* 内容容器卡片化 */
+        .container {
+            width: 85%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            padding: 40px 50px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            scroll-margin-top: 90px; /* 防止锚点被导航栏遮挡 */
+            border-top: 4px solid var(--primary-color);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 26px;
+            margin-top: 0;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+        h2::after {
+            content: '❖';
+            display: block;
+            color: var(--accent-color);
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        /* 返回顶部按钮美化 */
+        .back-to-top {
+            display: inline-block;
+            float: right;
+            margin-top: 30px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 14px;
+            border-bottom: 1px dashed var(--accent-color);
+            transition: color 0.3s;
+        }
+        .back-to-top:hover { color: var(--primary-color); border-color: var(--primary-color); }
+
+        /* 表格高级感 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 15px;
+        }
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #eaeaea;
+        }
+        tr:hover { background-color: #fafafa; }
+        .table-title {
+            font-weight: bold; 
+            font-size: 18px; 
+            background-color: var(--primary-color) !important; 
+            color: white;
+            letter-spacing: 2px;
+            border: none;
+            border-radius: 8px 8px 0 0;
+        }
+
+        /* 媒体容器 */
+        .media-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .media-container img {
+            max-width: 100%;
+            border-radius: 8px;
+            transition: transform 0.4s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .media-container img:hover {
+            transform: scale(1.02);
+        }
+
+        /* 表单美化 */
+        .form-table {
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #fcfcfc;
+        }
+        .form-table td {
+            text-align: left;
+            border-bottom: 1px dashed #eee;
+            padding: 12px;
+        }
+        .form-table .label-col {
+            text-align: right;
+            width: 25%;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        input[type="text"], select, textarea {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-family: inherit;
+            transition: border 0.3s, box-shadow 0.3s;
+            background-color: #fff;
+        }
+        input[type="text"]:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 8px rgba(201, 160, 104, 0.3);
+        }
+        textarea { resize: vertical; }
+        input[type="radio"], input[type="checkbox"] {
+            accent-color: var(--primary-color);
+            margin-right: 5px;
+            cursor: pointer;
+        }
+        .btn-submit {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            letter-spacing: 1px;
+        }
+        .btn-submit:hover { background-color: var(--accent-color); }
+        .btn-reset {
+            background-color: #ddd;
+            color: #666;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 15px;
+            transition: all 0.3s;
+        }
+        .btn-reset:hover { background-color: #ccc; }
+    </style>
+</head>
+<body>
+
+    <!-- 导航与背景音乐 -->
+    <div class="header">
+        <audio id="bgm" src="bgm.mp3" loop></audio>
+        <!-- 要求1：左上角音乐按钮 -->
+        <button class="music-btn" onclick="document.getElementById('bgm').play()">🎵 弦音入耳</button>
+        
+        <!-- 要求2：五个锚点链接 -->
+        <div class="nav-links">
+            <a href=" ">雅社简介</a >
+            <a href="#schedule">雅集安排</a >
+            <a href="#showcase">风采掠影</a >
+            <a href="#story">琴语心声</a >
+            <a href="#register">在线报名</a >
+        </div>
+    </div>
+
+    <div class="container">
+       <!-- 1. 社团简介 -->
+<section id="intro">
+    <h2>清音古筝社 · 简介</h2>
+    
+    <p>
+        “秦筝吐绝调，玉柱扬清曲。”清音古筝社成立于初春，是我们校园中一方难得的静谧之地。古筝，这件流淌着两千多年华夏血脉的乐器，不仅承载着高山流水的知音之情，更蕴含着渔舟唱晚的田园诗意。在快节奏的现代大学生活中，我们致力于为热爱传统音乐的同学提供一个修身养性、切磋琴艺的平台。无论你是抚琴多年的资深琴手，还是从未触碰过琴弦的零基础小白，只要你有一颗向往雅致生活的心，清音古筝社都将以最包容的姿态欢迎你。在这里，我们不仅教授指法，更传授音律之美；我们不仅排练曲目，更弘扬传统文化。
+    </p >
+
+    <p>
+        社内的琴室始终保持着古雅的布置：桐木琴台沿窗错落排布，素色琴罩上绣着浅淡的兰草纹样，墙角立着半架旧谱架，摊开的泛黄琴谱上，还留着往届社员用朱砂圈点的指法批注。窗台上常年供着几盆菖蒲与白梅，案头的铜香炉里常焚着柏子香，烟气袅袅漫过二十一根素弦，连风穿堂过的声响，都似被揉成了轻浅的宫商调。每一位初入社中的新成员，我们都会先引其净手、拭弦，不必急于上手弹奏，先静立片刻，听指尖轻触空弦时，桐木内里散出的沉厚回响，先与这传了千年的古器，结下一份温柔的初遇之缘。
+    </p >
+
+    <p>
+        日常的琴艺修习，从来不是枯燥的指法重复。我们会循着古谱的脉络，从最基础的托、劈、抹、挑教起，指尖的力度轻重，腕间的姿态俯仰，皆循古人传下的法度，却又不困于刻板的规矩。练《高山》时，会领你先去后山看云绕青峰的模样，让山的沉阔先落进胸中，再落进弦里；习《流水》时，会带你到湖畔听浪拍岸的声响，让水的灵动先浸进心底，再浸进指下。我们不催你速成曲目，只愿你慢下来，在日复一日的拨弦里，慢慢懂得“弦与指合，指与音合，音与意合”的古训，让琴音不再是复刻的旋律，而是你自己心绪的自然流淌。
+    </p >
+
+    <p>
+        除了常规的琴课修习，我们每月都会举办一场雅集。春日选在桃林之下，铺一张素毡，摆两盏清露茶，弹一曲《春江花月夜》，任落英飘落在弦上；秋日选在桂香深处，就着满院月光合奏《平沙落雁》，看檐下竹影随琴音轻轻摇晃。雅集之上从无高下之分，有人弹熟稔的古曲，有人试弹自己新编的小调，甚至有人抱着半卷诗词，随口将诗句吟进弦声里，众人便跟着轻声应和。我们也时常与校内的诗社、书法社相约同聚，抚琴之余，临半帖古帖，和几首小诗，让琴音与墨香、诗韵相融，把古人雅致的闲居意趣，重新搬进当下的校园时光里。
+    </p >
+
+    <p>
+        自建社以来，我们也数次带着琴音走上校园的舞台。素色汉服衬着桐木琴身，清越弦声穿过喧闹的人群，总能让往来的师生不自觉驻足，在快节奏的课业间隙，偷得片刻属于传统音律的安宁。但我们始终明白，清音的内核从来不是舞台上的掌声与荣誉，而是藏在每一次拨弦里的沉静。我们希望每一位社员，都能在二十一根弦的起伏里，磨去心浮气躁的少年意气，习得一份“不以物喜，不以己悲”的从容，在往后漫长的人生里，无论遭遇何种境遇，只要坐下来抚一曲琴，便能寻回内心的清宁。
+    </p >
+
+    <p>
+        两千余年的秦筝余韵，从未在岁月里蒙尘。清音古筝社守着这一方小小琴室，愿做校园里的传声人，让更多年轻人触碰到传统民乐的温度，让流淌了千年的弦声，在一代又一代青年的指尖，永远清亮地回响下去。
+    </p >
+
+    <a href=" " class="back-to-top">↑ 返回顶部</a >
+</section>
+
+        <!-- 2. 活动安排 (要求3：跨行跨列表格) -->
+        <section id="schedule">
+            <h2>雅集安排</h2>
+            <table>
+                <!-- 第一行占据4列 -->
+                <tr>
+                    <td colspan="4" class="table-title">
+                        【清音古筝社 2026 年春季学期雅集安排表】
+                    </td>
+                </tr>
+                <!-- 第二行内容居中 -->
+                <tr style="background-color: #f0f4f1; font-weight: bold; color: var(--primary-color);">
+                    <td>时间</td>
+                    <td>雅集主题</td>
+                    <td>活动地点</td>
+                    <td>主讲人/负责人</td>
+                </tr>
+                <tr>
+                    <td>第3周 周五晚</td>
+                    <td>【新成员见面会】</td>
+                    <td rowspan="2" style="color: var(--accent-color); font-weight: bold;">艺术楼 302 琴房</td> <!-- 跨行合并，同一教室 -->
+                    <td>林社长</td>
+                </tr>
+                <tr>
+                    <td>第4周 周六下午</td>
+                    <td>【古筝基础教学公开课】</td>
+                    <!-- 教室列已合并 -->
+                    <td>特邀王老师</td>
+                </tr>
+                <tr>
+                    <td>第8周 周末</td>
+                    <td>“高山流水”草坪雅集</td>
+                    <td>学校中心湖畔</td>
+                    <td>组织部</td>
+                </tr>
+            </table>
+            <a href="#" class="back-to-top">↑ 返回顶部</a >
+        </section>
+       <!-- 3. 风采展示 -->
+<section id="showcase">
+    <h2>风采掠影</h2>
+    <div class="media-container">
+        <!-- 插入文心一言生成的图片 (注意<img之间绝对不能有空格) -->
+        < img src="guzheng_img.jpg" alt="清音古筝社日常演奏">
+        <p style="color:#888; font-size: 14px; margin-top: 10px;">十指生秋水，数声弹夕阳。</p >
+    </div>
+    
+    <div class="media-container">
+        <!-- 插入剪映制作的视频 -->
+        <embed src="guzheng_video.mp4" width="100%" height="450" type="video/mp4" style="max-width: 800px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+    </div>
+    
+    <p style="text-align: center; margin-top: 30px;">
+        <a href=" " style="color: var(--accent-color); font-size: 18px; font-weight: bold; text-decoration: none; border: 1px solid var(--accent-color); padding: 10px 20px; border-radius: 20px; transition: 0.3s;">👉 点击翻阅：琴社日常排练纪实</a >
+    </p >
+    <a href="#" class="back-to-top">↑ 返回顶部</a >
+</section>
+
+<!-- 4. 社员故事 -->
+<section id="story">
+    <h2>琴语心声</h2>
+    
+    <p>
+        初入清音的那日，我攥着刚买的半新义甲，站在琴室门外踌躇了许久。门内飘出断续的弦声，是半首未弹完的《渔舟唱晚》，松香混着桐木的温香从门缝里漫出来，像一只温软的手，轻轻把我拉进了这间满是清辉的屋子。那时我连最基础的勾托指法都练得歪歪扭扭，指腹按弦按得发红，弹出的音总像被风扯住的断线，磕磕绊绊落不到实处。社里的师姐没催我赶进度，只搬了一张小凳坐在我身侧，握着我的手腕慢慢沉下去，说弦声最忌急，你心里慌，音自然就飘了。
+    </p >
+
+    <p>
+        后来的大半个学期，我几乎把所有没课的傍晚都泡在了琴室里。为了练好《战台风》里那段疾风骤雨般的扫弦，我指尖的薄茧磨破了一层又一层，义甲边缘磨得发毛，琴弦上都留下了几道浅淡的划痕。有次练到深夜回宿舍，路上的梧桐叶落了满肩，我抬手揉着发酸的手腕，指尖还留着弦丝冰凉的触感，忽然就听见风里似有若无飘来一段旋律，正是我练了许久的那一段。那一刻忽然就懂了师姐说的“弦声会等你”，所有熬到灯火阑珊的夜晚，所有指尖的酸痛，终会在某一个瞬间，变成从你指尖自然流泻而出的流畅音浪。
+    </p >
+
+    <p>
+        琴社的伙伴们，是我大学时光里最意料之外的知音。春日雅集在山亭合奏时，有人弹错了一个音，大家相视一笑，便顺着那个错音即兴改了旋律，最后出来的段落，竟比原曲多了几分山野间的随性；冬日的雪夜我们留在琴室围炉，就着一盏煮得翻滚的桂花茶，轮流弹自己最爱的曲子，弹到《梅花三弄》的泛音段落时，窗外的雪恰好落在窗纸上，发出细碎的轻响，成了琴曲最天然的尾声。去年我第一次登台演出，站在侧幕条后指尖冰凉，连熟到骨子里的谱子都险些记混，是身后的伙伴悄悄塞给我一块带着松香香气的手帕，在我耳边轻说“就当台下都是庭前的竹影，你只管弹给风听”。那曲终了时，我们在后台相视而笑，指尖还留着琴弦磨出的薄茧，眼底盛着的光，比台上的追光还要亮上几分。
+    </p >
+
+    <p>
+        琴社的旧琴身上，藏着数不清的这样细碎的故事：第三排那张最老的桐木琴，琴头处有一道浅痕，是十年前一届社员排练时，不小心碰落的笔架砸出来的；墙角那个掉了漆的铜香炉，是往届的老社员毕业时留下的，至今焚起香来，仍能漫出满室清润的松烟香。我们这些后来人，抚过这些带着岁月痕迹的物件，指尖触到的不只是冰凉的桐木与铜器，更是一届届清音人传下来的、藏在弦声里的温柔与热忱。
+    </p >
+
+    <p>
+        如今我也成了能领着新社员净手拭弦的前辈，看着那些和当年的我一样攥着义甲站在门口的孩子，总会想起初入琴室的那个下午。清音留给我们的从不止是会弹几首古曲的技艺，更是在这个人人步履匆匆的时代，守着一方慢下来的天地的心境。往后我们或许会散往天南海北，在不同的城市里为生活奔忙，但只要指尖触到那冰凉的弦丝，便会瞬间想起琴室里暖黄的灯光，想起围炉夜话时的桂花茶香，想起一群少年人，曾把最澄澈的青春，安放在了这二十一根弦的清响里。
+    </p >
+
+    <a href=" " class="back-to-top">↑ 返回顶部</a >
+</section>
+
+
+        <!-- 5. 在线报名 -->
+        <section id="register">
+            <h2>在线报名</h2>
+            <form action="#" method="post">
+                <table class="form-table">
+                    <tr>
+                        <td class="label-col"><label for="name">姓名：</label></td>
+                        <td><input type="text" id="name" name="name" placeholder="请输入真实姓名" required></td>
+                    </tr>
+                    <tr>
+                        <td class="label-col"><label>性别：</label></td>
+                        <td>
+                            <label><input type="radio" name="gender" value="male"> 男</label>
+                            <label style="margin-left: 20px;"><input type="radio" name="gender" value="female"> 女</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-col"><label>出生日期：</label></td>
+                        <td>
+                            <input type="text" name="year" placeholder="年" style="width: 60px; text-align: center;"> 年
+                            <input type="text" name="month" placeholder="月" style="width: 40px; text-align: center;"> 月
+                            <input type="text" name="day" placeholder="日" style="width: 40px; text-align: center;"> 日
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-col"><label for="phone">手机号：</label></td>
+                        <td><input type="text" id="phone" name="phone" placeholder="请输入11位手机号"></td>
+                    </tr>
+                    <tr>
+                        <td class="label-col"><label for="email">邮箱：</label></td>
+                        <td><input type="text" id="email" name="email" placeholder="请输入常用邮箱"></td>
+                    </tr>
+                    <tr>
+                        <td class="label-col"><label>是否有乐器基础：</label></td>
+                        <td>
+                            <label><input type="radio" name="base" value="yes"> 有</label>
+                            <label style="margin-left: 20px;"><input type="radio" name="base" value="no"> 无</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-col"><label>兴趣方向（多选）：</label></td>
+                        <td>
+                            <label><input type="checkbox" name="interest" value="solo"> 古筝独奏</label>
+                            <label style="margin-left: 15px;"><input type="checkbox" name="interest" value="ensemble"> 民乐合奏</label>
+                            <label style="margin-left: 15px;"><input type="checkbox" name="interest" value="theory"> 乐理学习</label>
+                            <label style="margin-left: 15px;"><input type="checkbox" name="interest" value="performance"> 舞台演出</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-col"><label for="grade">年级：</label></td>
+                        <td>
+                            <select id="grade" name="grade">
+                                <option value="freshman">大一</option>
+                                <option value="sophomore">大二</option>
+                                <option value="junior">大三</option>
+                                <option value="senior">大四</option>
+                                <option value="graduate">研究生</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-col"><label for="intro">自我介绍：</label></td>
+                        <td>
+                            <textarea id="intro" name="intro" rows="4" placeholder="【请简单介绍自己、以及加入清音古筝社的理由……】"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-col"><label>是否服从活动安排：</label></td>
+                        <td>
+                            <label><input type="radio" name="obey" value="yes"> 是</label>
+                            <label style="margin-left: 20px;"><input type="radio" name="obey" value="no"> 否</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center; padding-top: 30px; border-bottom: none;">
+                            <input type="submit" value="提 交 报 名" class="btn-submit">
+                            <input type="reset" value="重 置 信 息" class="btn-reset">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <a href="#" class="back-to-top">↑ 返回顶部</a >
+        </section>
+    </div>
+
+</body>
+</html>

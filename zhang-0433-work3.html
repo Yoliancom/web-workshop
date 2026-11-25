@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>手工书皮制作工作坊 · Handmade Book Cover</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 60px 20px;
+            background-color: #e9ecef;
+            font-family: "Helvetica Neue", Helvetica, "Microsoft YaHei", Arial, sans-serif;
+            text-align: center;
+        }
+
+        .page {
+            display: inline-block;
+            background-color: #E6F3FF;
+            box-shadow: 0 0 30px rgba(80, 58, 35, 0.25);
+            text-align: left;
+            max-width: 720px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .header-area {
+            padding: 40px 40px 20px 40px;
+            border-bottom: 2px dashed rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .intro-area {
+            padding: 20px 40px;
+        }
+
+        .table-area {
+            padding: 20px 40px;
+        }
+
+        .link-area {
+            padding: 20px 40px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.3);
+            margin: 10px 40px;
+            border-radius: 8px;
+        }
+
+        .notice {
+            padding: 20px 40px 40px 40px;
+            font-size: 14px;
+            color: #666;
+            border-top: 2px dashed rgba(0, 0, 0, 0.1);
+            line-height: 1.8;
+        }
+
+        div table a { 
+            color: #d35400; 
+            text-decoration: underline; 
+            font-weight: bold;
+        }
+
+        a:link { color: #2980b9; text-decoration: none; }
+        a:visited { color: #8e44ad; text-decoration: none; }
+        a:hover { color: #e74c3c; text-decoration: underline; }
+        a:active { color: #f1c40f; }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: #2c3e50;
+            font-weight: 600;
+            margin-top: 0;
+        }
+
+        p#intro {
+            color: #c0392b;
+            font-size: 1.15em;
+            font-weight: bold;
+            background-color: #fadbd8;
+            padding: 10px 15px;
+            border-left: 4px solid #c0392b;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+
+        a.red { color: #fff; background-color: #e74c3c; padding: 10px 20px; border-radius: 20px; text-decoration: none; font-weight: bold; display: inline-block; margin: 5px; transition: background 0.3s; }
+        a.red:hover { background-color: #c0392b; color: #fff; }
+        
+        a.blue { color: #fff; background-color: #3498db; padding: 10px 20px; border-radius: 20px; text-decoration: none; font-weight: bold; display: inline-block; margin: 5px; transition: background 0.3s; }
+        a.blue:hover { background-color: #2980b9; color: #fff; }
+
+        p::first-letter {
+            font-size: 1.4em;
+            color: #e67e22;
+            font-weight: bold;
+        }
+
+        .intro-area div::first-line {
+            color: #27ae60;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background-color: #34495e;
+            color: white;
+            font-weight: 500;
+        }
+
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+        
+        .section-title {
+            font-size: 1.2em;
+            border-bottom: 2px solid #3498db;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page">
+        
+        <div class="header-area">
+            <h1>手工书皮制作工作坊 · Handmade Book Cover</h1>
+        </div>
+
+        <div class="intro-area">
+            <h2 id="intro" class="section-title">活动介绍</h2>
+            <div>
+                <p>欢迎来到手工书皮制作工作坊！在这里，我们将用双手为心爱的书籍穿上一件独一无二的外衣，让每一次阅读都充满温度。</p >
+                <p>无论你是零基础还是手工达人，都可以在这里体验到创作的乐趣。我们准备了丰富的工具，大家将沉浸在 craft (手工) 的奇妙世界里，通过剪裁、折叠和粘贴，亲手完成一份专属作品。</p >
+            </div>
+            <p id="intro">重要提示：请提前十分钟到达活动现场，操作剪刀和美工刀时请注意安全！</p >
+        </div>
+
+        <div class="table-area">
+            <h3 class="section-title">材料准备清单</h3>
+            <table>
+                <tr>
+                    <th>材料名称</th>
+                    <th>数量</th>
+                    <th>相关说明</th>
+                </tr>
+                <tr>
+                    <td>牛皮纸</td>
+                    <td>2 张</td>
+                    <td>用于制作书皮主体，结实耐用</td>
+                </tr>
+                <tr>
+                    <td>白乳胶</td>
+                    <td>1 瓶</td>
+                    <td>安全环保，粘贴牢固 <a href=" ">点击查看使用方法</a ></td>
+                </tr>
+                <tr>
+                    <td>装饰麻绳</td>
+                    <td>1 卷</td>
+                    <td>用于装订和外观装饰，复古感拉满</td>
+                </tr>
+                <tr>
+                    <td>干花压片</td>
+                    <td>若干</td>
+                    <td>发挥创意，自由点缀封面</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="link-area">
+            <div>
+                <a href="https://hongchenwusdnu.github.io/bookstore/job4.html" class="red">查看往期活动照片</a >
+                <a href="zhang-0433-work2.html" class="blue">在线咨询活动详情</a >
+            </div>
+        </div>
+
+        <div class="notice">
+            【公告 1】本次活动时间为本周六下午两点，地点在图书馆三楼创意空间。<br>
+            【公告 2】请参与者自带想要包装的书籍一本，尺寸不限。<br>
+            【公告 3】活动结束后请自觉清理桌面垃圾，将剩余材料归还至前台，保持场地整洁。
+        </div>
+
+    </div>
+
+</body>
+</html>
